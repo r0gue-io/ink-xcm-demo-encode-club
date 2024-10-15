@@ -101,7 +101,7 @@ mod xcm_complete {
             ref_time: u64,
             proof_size: u64,
         ) -> Result<XcmHash, crate::xcm_complete::RuntimeError> {
-            let asset: Asset = (Here, fee_max).into();
+            let asset: Asset = (Location::parent(), fee_max).into();
             let ah = Junctions::from([Parachain(1000)]);
             let dest: Location = Location { parents: 1, interior: ah};
 
